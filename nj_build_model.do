@@ -680,7 +680,7 @@ gen obs = _n
 * USER INPUT: macro for list of variables in regressions. fill out these based on theory and your exploratory analysis
 * two categories: stuff motivated by theory, and "kitchen sink" informed by exploratory analysis.
 * "kitchen sink" has a lower p value threshhold than theory vars
-global theoryvars "fiscalpolicy  sd_mortgagepastdueany ac_medianhhincome sy_costofl~g"
+global theoryvars "fiscalpolicy  sd_mortgagepastdueany ac_medianhhincome sy_costofl~g uber_winning_var"
 stepwise, pr(.01): logit $depvar $theoryvars
 *** getting rid of:
 
