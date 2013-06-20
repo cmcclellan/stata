@@ -538,6 +538,8 @@ gen white_dems_150kplus = (white == 1 & ca_partyaffiliation == "DEM" & co_find >
 gen white_dems_70kplus = (white == 1 & ca_partyaffiliation == "DEM" & co_find >= 70000 & co_find != .)
 
 gen uneducated_white_men = (male == 1 & sy_educscore <= .5 & white == 1)
+gen uneducated_white_women = (female == 1 & sy_educscore <= .5 & white == 1)
+
 
 /*
 gen white_catholics_NJm = (white == 1 & white_catholic_model>= 17 & white_catholic_model!= .)
@@ -630,6 +632,8 @@ gen a_traditionalFamiles = (sy_workcluster == "7")
 
 gen obama12_minus_gore00 = (obama12 - gore00)
 gen medianHHIncome_100kunder = (ac_medianhhincome <= 100000 & ac_medianhhincome != .)
+gen hh1_totalpeople_low = (hh1_totalpersons <= 2 & hh1_totalpersons != .)
+gen pastdue60_squared = (sd_mortgagepastdue60^2)
 
 gen a_ever_Dem_Prim = 0
 foreach var of varlist  es_n1996p es_n1998p es_n2000p es_n2002p es_n2004p es_n2006p es_n2008p es_n2010p {
@@ -675,7 +679,7 @@ gen obs = _n
 * USER INPUT: macro for list of variables in regressions. fill out these based on theory and your exploratory analysis
 * two categories: stuff motivated by theory, and "kitchen sink" informed by exploratory analysis.
 * "kitchen sink" has a lower p value threshhold than theory vars
-global theoryvars "fiscalpolicy sd_mortgagepastdueany ac_medianhhincome"
+global theoryvars "fiscalpolicy  sy_costofl~g sd_mortgagepastdueany "
 stepwise, pr(.01): logit $depvar $theoryvars
 *** getting rid of:
 
@@ -691,7 +695,7 @@ obamasupport obamasup64plus obamasup85plus obamasup64_85 obamasup14minus r_count
 
 
 * "Kitchen Sink Vars"
-global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctnone~s	ac_pctblack	ac_pctasian	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t	ac_pctgrad~e	ac_marr~ners	ac_pctmarr~n	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH	male	black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_100kplus	white_dems_150kplus	uneducated_white_men	corzine05	gore00	unionmember			seniorWhiteWomen	seniorWhite	middleWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09 kerry04 obama08 menendez12 lautenberg08 menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men youngWhite ac_pctwhite white_dems_70kplus whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00 medianHHIncome_100kunder 	rural	urban	suburban	exurban womenwithchildren  sy_costofl~g"
+global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctnone~s	ac_pctblack	ac_pctasian	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t		ac_marr~ners	ac_pctmarr~n	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH		black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_150kplus	uneducated_white_men	corzine05	gore00	unionmember			seniorWhiteWomen	seniorWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09 kerry04 obama08 menendez12 lautenberg08 menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men ac_pctwhite  whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00  	rural	urban	exurban womenwithchildren   sy_partisanscore2012_bin5 sd_mortgagepastdue30 sd_mortgagepastdue90  ac_medianhhincome  outdoorsy white male uneducated_white_women ac_pctgrad~e"
 ** non- a_* that you're dropping for being in lockterm: 	
 ** non- a_*s that you're dropping for colinearity:   
 ** a_*s that you're dropping for colinearity: 
