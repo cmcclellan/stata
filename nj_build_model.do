@@ -161,11 +161,13 @@ split ge_regaddresszip, p("-")
 drop ge_regaddresszip  ge_regaddresszip2
 rename ge_regaddresszip1 reg_zip5
 
+
 /*
 split ge_mailaddresszip, p("-")
 drop ge_mailaddresszip  ge_mailaddresszip2
 rename ge_mailaddresszip1 mail_zip5
 */
+
 
 sort reg_zip5
 merge reg_zip5 using "S:\2013\models\general_public\NJ\fema_reg_zip.dta", nokeep
@@ -174,14 +176,15 @@ gen reg_disaster = 0
 replace reg_disaster = 1 if _merge == 3
 drop _merge
 
+/*
 sort mail_zip5
 merge mail_zip5 using "S:\2013\models\general_public\NJ\fema_mail_zip.dta", nokeep
 gen mail_disaster = 0
 replace mail_disaster = 1 if _merge == 3
 drop _merge
+*/
 
 gen disaster = 0
-replace disaster = 1 if mail_disaster == 1
 replace disaster = 1 if reg_disaster == 1
 
 
@@ -191,9 +194,6 @@ merge anid using "S:\analytic_files\NJ\catalist models\afl_models_nj.dta", nokee
 tab _merge
 drop _merge
 
-
-
-sort mail_zip5
 
 * USER INPUT: custom recodes
 
