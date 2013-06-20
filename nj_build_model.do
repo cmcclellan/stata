@@ -1,11 +1,6 @@
 * New Jersey
-* 6/14/2013 - cmk
+* 6/20/2013 - cmk
 
-
-
- *** TESTING FOR GIT
- 
-global variable_omg
 
 /*
 
@@ -680,7 +675,7 @@ gen obs = _n
 * USER INPUT: macro for list of variables in regressions. fill out these based on theory and your exploratory analysis
 * two categories: stuff motivated by theory, and "kitchen sink" informed by exploratory analysis.
 * "kitchen sink" has a lower p value threshhold than theory vars
-global theoryvars "fiscalpolicy  sd_mortgagepastdueany ac_medianhhincome sy_costofl~g uber_winning_var"
+global theoryvars "fiscalpolicy  sd_mortgagepastdueany ac_medianhhincome sy_costofl~g"
 stepwise, pr(.01): logit $depvar $theoryvars
 *** getting rid of:
 
