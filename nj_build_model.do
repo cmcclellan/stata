@@ -1,5 +1,5 @@
 * New Jersey
-* 6/20/2013 - cmk
+* 6/21/2013 - cmk
 
 
 /*
@@ -570,11 +570,11 @@ cap drop a_*
 
 *gen a_nonChristian_name = (ca_religion == "H" | ca_religion == "M" | ca_religion == "J" | ca_religion == "B" | ca_religion == "S")
 *gen a_noComm_data = (co_actvbank == "U")
-gen a_has_bankcard = (co_actvbank == "Y") /* I'm a little worried that this (and equity) are just proxies for wealth - shouldwe be using them at all? */
-gen a_compowner = (co_compown == "Y")
+*gen a_has_bankcard = (co_actvbank == "Y") /* I'm a little worried that this (and equity) are just proxies for wealth - shouldwe be using them at all? */
+*gen a_compowner = (co_compown == "Y")
 gen a_equity_200kplus = (co_equitest == "M" | co_equitest == "N" | co_equitest == "O")
 gen a_equity_90kplus = (co_equitest == "M" | co_equitest == "N" | co_equitest == "O" | co_equitest == "J" | co_equitest == "K" | co_equitest == "L")
-/* new */ gen a_income_25kless = (co_findc == "A" | co_findc == "B" | co_findc == "C" | co_findc == "D")
+*gen a_income_25kless = (co_findc == "A" | co_findc == "B" | co_findc == "C" | co_findc == "D")
 gen a_income_70kless = (co_findc == "A" | co_findc == "B" | co_findc == "C" | co_findc == "D" | co_findc == "E" | co_findc == "F" | co_findc == "G" | co_findc == "H" | co_findc == "I" | co_findc == "J" | co_findc == "K" | co_findc == "L")
 gen a_income_500kmore = (co_findc == "T")
 *gen a_part40plus_dShore = (partisan40plus * disaster * region_shore)
@@ -585,7 +585,7 @@ gen a_high_pscore_whites = (sy_partisanscore2012 >= 70 & sy_partisanscore <= 100
 gen a_golfer = (co_golf == "Y")
 gen a_fitness = (co_fitness == "Y")
 *gen a_diy = (co_homewrks == "Y")
-gen a_hitech = (co_htia == "Y")
+*gen a_hitech = (co_htia == "Y")
 gen a_investor = (co_invest == "Y") 		/* This is mostly just getting very wealthy peple */
 *gen a_multi_dweller = (co_loctype == "M")
 gen a_single_family = (co_loctype == "S")
@@ -695,7 +695,7 @@ obamasupport obamasup64plus obamasup85plus obamasup64_85 obamasup14minus r_count
 
 
 * "Kitchen Sink Vars"
-global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctnone~s	ac_pctblack	ac_pctasian	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t		ac_marr~ners	ac_pctmarr~n	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH		black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_150kplus	uneducated_white_men	corzine05	gore00	unionmember			seniorWhiteWomen	seniorWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09 kerry04 obama08 menendez12 lautenberg08 menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men ac_pctwhite  whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00  	rural	urban	exurban womenwithchildren   sy_partisanscore2012_bin5 sd_mortgagepastdue30 sd_mortgagepastdue90  ac_medianhhincome  white male uneducated_white_women ac_pctgrad~e"
+global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctblack	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t		ac_marr~ners	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH		black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_150kplus	uneducated_white_men	corzine05		unionmember			seniorWhiteWomen	seniorWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09     menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men ac_pctwhite  whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00  	urban	exurban womenwithchildren   sy_partisanscore2012_bin5 sd_mortgagepastdue30 sd_mortgagepastdue90  ac_medianhhincome  white male uneducated_white_women ac_pctgrad~e"
 ** non- a_* that you're dropping for being in lockterm: 	
 ** non- a_*s that you're dropping for colinearity:   
 ** a_*s that you're dropping for colinearity: 
