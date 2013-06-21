@@ -572,79 +572,85 @@ cap drop a_*
 *gen a_noComm_data = (co_actvbank == "U")
 *gen a_has_bankcard = (co_actvbank == "Y") /* I'm a little worried that this (and equity) are just proxies for wealth - shouldwe be using them at all? */
 *gen a_compowner = (co_compown == "Y")
-gen a_equity_200kplus = (co_equitest == "M" | co_equitest == "N" | co_equitest == "O")
-gen a_equity_90kplus = (co_equitest == "M" | co_equitest == "N" | co_equitest == "O" | co_equitest == "J" | co_equitest == "K" | co_equitest == "L")
+*gen a_equity_200kplus = (co_equitest == "M" | co_equitest == "N" | co_equitest == "O")
+*gen a_equity_90kplus = (co_equitest == "M" | co_equitest == "N" | co_equitest == "O" | co_equitest == "J" | co_equitest == "K" | co_equitest == "L")
 *gen a_income_25kless = (co_findc == "A" | co_findc == "B" | co_findc == "C" | co_findc == "D")
-gen a_income_70kless = (co_findc == "A" | co_findc == "B" | co_findc == "C" | co_findc == "D" | co_findc == "E" | co_findc == "F" | co_findc == "G" | co_findc == "H" | co_findc == "I" | co_findc == "J" | co_findc == "K" | co_findc == "L")
-gen a_income_500kmore = (co_findc == "T")
+*gen a_income_70kless = (co_findc == "A" | co_findc == "B" | co_findc == "C" | co_findc == "D" | co_findc == "E" | co_findc == "F" | co_findc == "G" | co_findc == "H" | co_findc == "I" | co_findc == "J" | co_findc == "K" | co_findc == "L")
+*gen a_income_500kmore = (co_findc == "T")
 *gen a_part40plus_dShore = (partisan40plus * disaster * region_shore)
 *gen a_part60_80_dNYC = (partisan60_80 * disaster * region_nyc)
 *gen a_disaster_whites = (white * disaster)
 *gen a_high_pscore_disaster_whites = (a_disaster_whites == 1 & sy_partisanscore2012 >= 70 & sy_partisanscore2012 != .)
-gen a_high_pscore_whites = (sy_partisanscore2012 >= 70 & sy_partisanscore <= 100 & white == 1)
-gen a_golfer = (co_golf == "Y")
-gen a_fitness = (co_fitness == "Y")
+*gen a_high_pscore_whites = (sy_partisanscore2012 >= 70 & sy_partisanscore <= 100 & white == 1)
+*gen a_golfer = (co_golf == "Y")
+*gen a_fitness = (co_fitness == "Y")
 *gen a_diy = (co_homewrks == "Y")
 *gen a_hitech = (co_htia == "Y")
-gen a_investor = (co_invest == "Y") 		/* This is mostly just getting very wealthy peple */
+*gen a_investor = (co_invest == "Y") 		/* This is mostly just getting very wealthy peple */
 *gen a_multi_dweller = (co_loctype == "M")
-gen a_single_family = (co_loctype == "S")
-gen a_magsub = (co_magazine == "Y")
-gen a_gardener = (co_outdgrdn == "Y")
-gen a_outdoorsy = (co_outdoor == "Y")
-gen a_single = (co_smarstat == "S")
-gen a_married = (co_smarstat == "M")
+*gen a_single_family = (co_loctype == "S")
+*gen a_magsub = (co_magazine == "Y")
+*gen a_gardener = (co_outdgrdn == "Y")
+*gen a_outdoorsy = (co_outdoor == "Y")
+*gen a_single = (co_smarstat == "S")
+*gen a_married = (co_smarstat == "M")
 *gen a_marriedukn = (co_smarstat == "U")
 *gen a_single_hh1 = (hh1_totalpersons == 1)
-gen a_worth_400mplus = (co_wlthfind == "A" | co_wlthfind == "B" | co_wlthfind == "C" | co_wlthfind == "D" | co_wlthfind == "E" | co_wlthfind == "F" | co_wlthfind == "G" )
-gen a_worth_100mless = (co_wlthfind == "N" | co_wlthfind == "O" | co_wlthfind == "P" | co_wlthfind == "Q" | co_wlthfind == "R" | co_wlthfind == "S" | co_wlthfind == "T")
-gen a_worth_20mless = (co_wlthfind == "R" | co_wlthfind == "S" | co_wlthfind == "T")
+*gen a_worth_400mplus = (co_wlthfind == "A" | co_wlthfind == "B" | co_wlthfind == "C" | co_wlthfind == "D" | co_wlthfind == "E" | co_wlthfind == "F" | co_wlthfind == "G" )
+*gen a_worth_100mless = (co_wlthfind == "N" | co_wlthfind == "O" | co_wlthfind == "P" | co_wlthfind == "Q" | co_wlthfind == "R" | co_wlthfind == "S" | co_wlthfind == "T")
+*gen a_worth_20mless = (co_wlthfind == "R" | co_wlthfind == "S" | co_wlthfind == "T")
 *gen a_no_credit_cards = (co_actvcnsr == 0)
-gen a_unlikely_int_user = (co_inetuse >= 8 &  co_inetuse <= 10)
-gen a_unlikely_heavy_int_user = (co_inetuseh  == 9 | co_inetuseh == 10)
-gen a_likely_renter = (co_ownrent == 0 | co_ownrent == 1 | co_ownrent == 2 | co_ownrent ==3 | co_ownrent == 4 | co_ownrent == 5)
-/* corrected - this was accidentally reversed */ gen a_likely_revolver = (co_revolver == 0 | co_revolver == 1 | co_revolver == 2)
+*gen a_unlikely_int_user = (co_inetuse >= 8 &  co_inetuse <= 10)
+*gen a_unlikely_heavy_int_user = (co_inetuseh  == 9 | co_inetuseh == 10)
+*gen a_likely_renter = (co_ownrent == 0 | co_ownrent == 1 | co_ownrent == 2 | co_ownrent ==3 | co_ownrent == 4 | co_ownrent == 5)
+*gen a_likely_revolver = (co_revolver == 0 | co_revolver == 1 | co_revolver == 2)
 *gen a_Union_county = (di_countyfips == "039")
-gen a_GOP_primary_sum = g2010r + g2008r + g2004r
-gen a_freq_Prim = (es_countprim == 4)
+*gen a_GOP_primary_sum = g2010r + g2008r + g2004r
+*gen a_freq_Prim = (es_countprim == 4)
 *gen a_voted08_no9 = ((es_n2008g == "A" | es_n2008g == "Y") & (es_n2009g == "N"))
 *gen a_voted08_no10 = ((es_n2008g == "A" | es_n2008g == "Y") & (es_n2010g == "N"))
 * gen a_many_middle_women = (hh1_women35to64 >=2 & hh1_women35to64 <=7)
-gen a_1_35to64_manhh1 = (hh1_men35to64 == 1)
-gen a_1_senior_manhh1 = (hh1_men65plus == 1)
+*gen a_1_35to64_manhh1 = (hh1_men35to64 == 1)
+*gen a_1_senior_manhh1 = (hh1_men65plus == 1)
 *gen a_1_man35plus_hh1 = (hh1_men65plus == 1 | hh1_men35to64 == 1)
-gen a_nowhitesinhh1 = (hh1_white == 0)
-gen a_white_only_hh1 = (hh1_white == hh1_totalpersons)
-/* fixed */ gen a_mixed_hh1 = (hh1_totalpersons != hh1_white & hh1_totalpersons != hh1_black & hh1_totalpersons != hh1_asian & hh1_totalpersons != hh1_hispanic & hh1_totalpersons != hh1_otherrace)
-/* new */ gen a_white_in_mixed_hh1 = (white * a_mixed_hh1)
+*gen a_nowhitesinhh1 = (hh1_white == 0)
+*gen a_mixed_hh1 = (hh1_totalpersons != hh1_white & hh1_totalpersons != hh1_black & hh1_totalpersons != hh1_asian & hh1_totalpersons != hh1_hispanic & hh1_totalpersons != hh1_otherrace)
+*gen a_white_in_mixed_hh1 = (white * a_mixed_hh1)
 *gen a_no_whites_in_hh1 = (hh1_white == 0)
-gen a_whitefamilies = (hh1_white >= 2 & hh1_white != . & a_white_only_hh1 == 1)
+*gen a_whitefamilies = (hh1_white >= 2 & hh1_white != . & white_only_hh1 == 1)
 *gen a_hh1_ss = (hh1_type == "SS")
 *gen a_single_ladies = (women == 1 & hh1_menunder == 0 & hh1_men35to == 0 & hh1_men65plus == 0)
 *gen a_gen_group_hh1s = (hh1_type == "GR" | hh1_type == "GN")
 *gen a_alt_mfp = (hh1_alttype == "MFP")
 *gen a_family_plus = (a_gen_group_hh1s ==1 | a_alt_mfp == 1)
-gen a_married_children = (hh2_type == "MC")
+*gen a_married_children = (hh2_type == "MC")
 gen a_mfsln = (hh2_alttype == "MFLSN")
 *gen a_2012_registrants = (id_firstseenon == "2012-05-21" | id_firstseenon == "2012-07-23" | id_firstseenon == "2012-08-02" | id_firstseenon == "2012-08-28" | id_firstseenon == "2012-10-16")
-gen a_whiteCollar = (sy_workcluster == "13")
-gen a_traditionalFamiles = (sy_workcluster == "7")
+*gen a_whiteCollar = (sy_workcluster == "13")
+*gen a_traditionalFamiles = (sy_workcluster == "7")
 
+
+cap drop obama12_minus_gore00 medianHHIncome_100kunder hh1_totalpeople_low pastdue60_squared low_income_GOP
 gen obama12_minus_gore00 = (obama12 - gore00)
 gen medianHHIncome_100kunder = (ac_medianhhincome <= 100000 & ac_medianhhincome != .)
 gen hh1_totalpeople_low = (hh1_totalpersons <= 2 & hh1_totalpersons != .)
 gen pastdue60_squared = (sd_mortgagepastdue60^2)
+gen low_income_GOP = (ca_partyaffiliation == "REP" & co_find <= 25000 & co_find != .)
 
+/*
 gen a_ever_Dem_Prim = 0
 foreach var of varlist  es_n1996p es_n1998p es_n2000p es_n2002p es_n2004p es_n2006p es_n2008p es_n2010p {
 replace a_ever_Dem_Prim = 1 if `var' == "DEM"
 replace a_ever_Dem_Prim = 1 if `var' == "D"
 }
+
+
 gen a_ever_Rep_Prim = 0
 foreach var of varlist  es_n1996p es_n1998p es_n2000p es_n2002p es_n2004p es_n2006p es_n2008p es_n2010p {
 replace a_ever_Rep_Prim = 1 if `var' == "REP"
 replace a_ever_Rep_Prim = 1 if `var' == "R"
 }
+*/
 
 cap rename a_hh1_ss hh1_ss
 cap rename a_gen_group_hh1s gen_group_hh1s
@@ -671,6 +677,7 @@ replace `var' = 0 if missing(`var')
 
 drop if missing(fiscalpolicy)
 
+cap drop obs
 gen obs = _n
 
 
@@ -679,7 +686,7 @@ gen obs = _n
 * USER INPUT: macro for list of variables in regressions. fill out these based on theory and your exploratory analysis
 * two categories: stuff motivated by theory, and "kitchen sink" informed by exploratory analysis.
 * "kitchen sink" has a lower p value threshhold than theory vars
-global theoryvars "fiscalpolicy  sy_costofl~g sd_mortgagepastdueany "
+global theoryvars "fiscalpolicy"
 stepwise, pr(.01): logit $depvar $theoryvars
 *** getting rid of:
 
@@ -695,7 +702,7 @@ obamasupport obamasup64plus obamasup85plus obamasup64_85 obamasup14minus r_count
 
 
 * "Kitchen Sink Vars"
-global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctblack	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t		ac_marr~ners	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH		black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_150kplus	uneducated_white_men	corzine05		unionmember			seniorWhiteWomen	seniorWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09     menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men ac_pctwhite  whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00  	urban	exurban womenwithchildren   sy_partisanscore2012_bin5 sd_mortgagepastdue30 sd_mortgagepastdue90  ac_medianhhincome  white male uneducated_white_women ac_pctgrad~e"
+global kitchensinkvars "a_* cn_inhh_med	whiteMale sy_costofl~g sd_mortgagepastdueany"
 ** non- a_* that you're dropping for being in lockterm: 	
 ** non- a_*s that you're dropping for colinearity:   
 ** a_*s that you're dropping for colinearity: 
@@ -721,7 +728,7 @@ drop avg
 
 *drop
 
-local pass = 3
+local pass = 5
 
 cap log close
 log using "Coeff_Validation_pass`pass'.txt", replace text
