@@ -794,7 +794,7 @@ replace sy_partisanscore2012_bin5 = 3 if missing(sy_partisanscore2012_bin5) & sy
 replace sy_partisanscore2012_bin5 = 4 if missing(sy_partisanscore2012_bin5) & sy_partisanscore2012 <=80
 replace sy_partisanscore2012_bin5 = 5 if missing(sy_partisanscore2012_bin5) & sy_partisanscore2012 
 
-tab support_amendment sy_partisanscore2012_bin if validate == 1, row
+tab support_amendment_bin sy_partisanscore2012_bin if validate == 1, row
 
 tab sy_partisanscore2012_bin5 $depvar if validate == 1, row
 
