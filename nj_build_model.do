@@ -695,23 +695,13 @@ obamasupport obamasup64plus obamasup85plus obamasup64_85 obamasup14minus r_count
 
 
 * "Kitchen Sink Vars"
-global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctnone~s	ac_pctblack	ac_pctasian	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t		ac_marr~ners	ac_pctmarr~n	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH		black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_150kplus	uneducated_white_men	corzine05	gore00	unionmember			seniorWhiteWomen	seniorWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09 kerry04 obama08 menendez12 lautenberg08 menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men ac_pctwhite  whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00  	rural	urban	exurban womenwithchildren   sy_partisanscore2012_bin5 sd_mortgagepastdue30 sd_mortgagepastdue90  ac_medianhhincome  outdoorsy white male uneducated_white_women ac_pctgrad~e"
+global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctnone~s	ac_pctblack	ac_pctasian	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t		ac_marr~ners	ac_pctmarr~n	ac_pctdriv~k	ac_pctwome~d	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_low	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	DemInHH	RepInHH	RepOnlyHH	OthersHH		black	hispanic	Oneormorechild	under35	between50and64	hi_pscore_whites	white_dems	white_dems_150kplus	uneducated_white_men	corzine05	gore00	unionmember			seniorWhiteWomen	seniorWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09 kerry04 obama08 menendez12 lautenberg08 menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men ac_pctwhite  whiteMale  ind  sy_partisanscore2012 obama12_minus_gore00  	rural	urban	exurban womenwithchildren   sy_partisanscore2012_bin5 sd_mortgagepastdue30 sd_mortgagepastdue90  ac_medianhhincome  white male uneducated_white_women ac_pctgrad~e"
 ** non- a_* that you're dropping for being in lockterm: 	
 ** non- a_*s that you're dropping for colinearity:   
 ** a_*s that you're dropping for colinearity: 
 ** a_*s that you're dropping cuz you don't like them:
 
 cap rename a_single_hh1 single_hh1
-
-/*
-* Pass 1 Kitchen Sink: global kitchensinkvars "a_*	ac_pctnonc~n	ac_pctnone~s	ac_pctblack	ac_pctasian	ac_pcthispaniclatino	ac_pctowno~y	ac_pctpubl~k	ac_pctrent~t	ac_pctgrad~e	ac_marr~ners	ac_pctmarr~n	ac_pctdriv~k	ac_pctwome~d	sy_costofl~g	sy_educscore_high	sy_gunscore	sy_gunscore_low	sy_huntermodel_low	sy_marriagescore_high	sy_partisanscore2012_high	cn_wunemp	cn_inhh_med	cn_ipoverty	cn_huoopct	sd_hispch~08	sd_mortga~30	DemInHH	RepInHH	RepOnlyHH	OthersHH	syreligB	syreligF	syreligJ	male	black	hispanic	Oneormorechild	region_shore	region_philly	region_nyc	under35	between50and64	hi_pscore_whites	white_dems	white_dems_100kplus	white_dems_150kplus	uneducated_white_men	corzine05	gore00	obama12	dpp_minus_corzine09	unionmember			seniorWhiteWomen	middleWhiteWomen	seniorWhite	middleWhite	oldWhite middleWhiteMen  dem_rep_sum OnlypersoninHH corzine09 kerry04 obama08 menendez12 lautenberg08 menendez06 hi_pscore_white_women hi_pscore_white_men Dem_Women Dem_Men youngWhite ac_pctwhite white_dems_70kplus whiteMale  ind seniorWhiteMen sy_costofl~g sy_partisanscore2012 ac_medianhhincome"
-* Pass 1 Theory Vars: fiscalpolicy
-* Pass 1 Removed: 
-* Pass 1 R2: 0.1561
-
-
-
-*/
 
 
 
